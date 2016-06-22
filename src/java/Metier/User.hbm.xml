@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 juin 2013 13:35:52 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Metier.User" table="user" catalog="gscmr">
+        <id name="matUser" type="string">
+            <column name="MAT_USER" />
+            <generator class="assigned" />
+        </id>
+        <property name="nomUser" type="string">
+            <column name="NOM_USER" />
+        </property>
+        <property name="prenomUser" type="string">
+            <column name="PRENOM_USER" />
+        </property>
+        <property name="posteUser" type="string">
+            <column name="POSTE_USER" />
+        </property>
+        <property name="passwordUser" type="string">
+            <column name="PASSWORD_USER" />
+        </property>
+        <set name="articles" inverse="true">
+            <key>
+                <column name="MAT_USER" />
+            </key>
+            <one-to-many class="Metier.Article" />
+        </set>
+        <set name="demandeArticles" inverse="true">
+            <key>
+                <column name="MAT_USER" not-null="true" />
+            </key>
+            <one-to-many class="Metier.DemandeArticle" />
+        </set>
+        <set name="demandeArticles_1" inverse="true">
+            <key>
+                <column name="MAT_USER" not-null="true" />
+            </key>
+            <one-to-many class="Metier.DemandeArticle" />
+        </set>
+        <set name="messages" inverse="true">
+            <key>
+                <column name="MAT_USER" not-null="true" />
+            </key>
+            <one-to-many class="Metier.Message" />
+        </set>
+        <set name="messages_1" inverse="true">
+            <key>
+                <column name="MAT_USER" not-null="true" />
+            </key>
+            <one-to-many class="Metier.Message" />
+        </set>
+        <set name="articles_1" inverse="true">
+            <key>
+                <column name="MAT_USER" />
+            </key>
+            <one-to-many class="Metier.Article" />
+        </set>
+    </class>
+</hibernate-mapping>

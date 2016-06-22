@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 juin 2013 13:35:52 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Metier.ClasseArticle" table="classe_article" catalog="gscmr">
+        <id name="idClasse" type="java.lang.Long">
+            <column name="ID_CLASSE" />
+            <generator class="identity" />
+        </id>
+        <property name="nomClasse" type="string">
+            <column name="NOM_CLASSE" />
+        </property>
+        <property name="quantite" type="int">
+            <column name="QUANTITE" not-null="true" />
+        </property>
+        <set name="demandeArticles" inverse="true">
+            <key>
+                <column name="ID_CLASSE" not-null="true" />
+            </key>
+            <one-to-many class="Metier.DemandeArticle" />
+        </set>
+        <set name="articles" inverse="true">
+            <key>
+                <column name="ID_CLASSE" not-null="true" />
+            </key>
+            <one-to-many class="Metier.Article" />
+        </set>
+        <set name="demandeArticles_1" inverse="true">
+            <key>
+                <column name="ID_CLASSE" not-null="true" />
+            </key>
+            <one-to-many class="Metier.DemandeArticle" />
+        </set>
+        <set name="articles_1" inverse="true">
+            <key>
+                <column name="ID_CLASSE" not-null="true" />
+            </key>
+            <one-to-many class="Metier.Article" />
+        </set>
+    </class>
+</hibernate-mapping>

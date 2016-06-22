@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 juin 2013 13:35:52 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Metier.Admin" table="admin" catalog="gscmr">
+        <id name="matAdmin" type="string">
+            <column name="MAT_ADMIN" />
+            <generator class="assigned" />
+        </id>
+        <property name="nomAdmin" type="string">
+            <column name="NOM_ADMIN" />
+        </property>
+        <property name="prenomAdmin" type="string">
+            <column name="PRENOM_ADMIN" />
+        </property>
+        <property name="passwordAdmin" type="string">
+            <column name="PASSWORD_ADMIN" />
+        </property>
+    </class>
+</hibernate-mapping>

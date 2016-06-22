@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 juin 2013 13:35:52 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Metier.DemandeArticle" table="demande_article" catalog="gscmr">
+        <id name="idDemande" type="java.lang.Long">
+            <column name="ID_DEMANDE" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="classeArticle" class="Metier.ClasseArticle" fetch="select">
+            <column name="ID_CLASSE" not-null="true" />
+        </many-to-one>
+        <many-to-one name="user" class="Metier.User" fetch="select">
+            <column name="MAT_USER" not-null="true" />
+        </many-to-one>
+        <property name="dateDemande" type="date">
+            <column name="DATE_DEMANDE" length="10" />
+        </property>
+        <property name="reponse" type="java.lang.Boolean">
+            <column name="REPONSE" />
+        </property>
+        <property name="commentaireReponse" type="string">
+            <column name="COMMENTAIRE_REPONSE" length="65535" />
+        </property>
+        <property name="demandeVue" type="java.lang.Boolean">
+            <column name="DEMANDE_VUE" />
+        </property>
+    </class>
+</hibernate-mapping>

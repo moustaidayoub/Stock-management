@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="gscmr"/>
+  <table-filter match-name="message"/>
+  <table-filter match-name="admin"/>
+  <table-filter match-name="fournisseur"/>
+  <table-filter match-name="article"/>
+  <table-filter match-name="user"/>
+  <table-filter match-name="classe_article"/>
+  <table-filter match-name="demande_article"/>
+</hibernate-reverse-engineering>

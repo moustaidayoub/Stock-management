@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 juin 2013 13:35:52 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Metier.Fournisseur" table="fournisseur" catalog="gscmr">
+        <id name="idFournisseur" type="java.lang.Long">
+            <column name="ID_FOURNISSEUR" />
+            <generator class="identity" />
+        </id>
+        <property name="nomFournisseur" type="string">
+            <column name="NOM_FOURNISSEUR" />
+        </property>
+        <property name="adresseFournisseur" type="string">
+            <column name="ADRESSE_FOURNISSEUR" length="65535" />
+        </property>
+        <property name="telFournisseur" type="string">
+            <column name="TEL_FOURNISSEUR" />
+        </property>
+        <property name="emailFournisseur" type="string">
+            <column name="EMAIL_FOURNISSEUR" length="65535" />
+        </property>
+        <set name="articles" inverse="true">
+            <key>
+                <column name="ID_FOURNISSEUR" not-null="true" />
+            </key>
+            <one-to-many class="Metier.Article" />
+        </set>
+        <set name="articles_1" inverse="true">
+            <key>
+                <column name="ID_FOURNISSEUR" not-null="true" />
+            </key>
+            <one-to-many class="Metier.Article" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 22 juin 2013 13:35:52 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="Metier.Article" table="article" catalog="gscmr">
+        <id name="idArticle" type="java.lang.Long">
+            <column name="ID_ARTICLE" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="fournisseur" class="Metier.Fournisseur" fetch="select">
+            <column name="ID_FOURNISSEUR" not-null="true" />
+        </many-to-one>
+        <many-to-one name="classeArticle" class="Metier.ClasseArticle" fetch="select">
+            <column name="ID_CLASSE" not-null="true" />
+        </many-to-one>
+        <many-to-one name="user" class="Metier.User" fetch="select">
+            <column name="MAT_USER" />
+        </many-to-one>
+        <property name="numSerie" type="string">
+            <column name="NUM_SERIE" />
+        </property>
+        <property name="marque" type="string">
+            <column name="MARQUE" />
+        </property>
+        <property name="modele" type="string">
+            <column name="MODELE" />
+        </property>
+        <property name="dateLivraison" type="date">
+            <column name="DATE_LIVRAISON" length="10" />
+        </property>
+        <property name="notes" type="string">
+            <column name="NOTES" length="65535" />
+        </property>
+    </class>
+</hibernate-mapping>
